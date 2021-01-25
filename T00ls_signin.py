@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 # coding by F1tz
+import os
 import requests
 import re
 import json
@@ -32,26 +33,26 @@ url_domain= 'https://www.t00ls.net/domain.html'
 # 6 您最喜欢的餐馆名称
 # 7 驾驶执照的最后四位数字
 
-username = ''  # 用户名
-password = ''  # 明文密码或密码MD5
+username = os.environ["username"]  # 用户名
+password = os.environ["password"]  # 明文密码或密码MD5
 password_hash = True  # 密码为md5时设置为True
-questionid = ''  # 问题ID，参考上面注释，没有可不填
-answer = ''  # 问题答案，没有可不填
+questionid = '1'  # 问题ID，参考上面注释，没有可不填
+answer = os.environ["answer"]  # 问题答案，没有可不填
 
 # 配置各种key
 # Server酱申请的skey
-SCKEY = ''
+SCKEY = os.environ["SCKEY"]
 # Webhook加签秘钥
-secret_key = ''
+secret_key = os.environ["secret_key"]
 # Webhook access_token
-access_token = ''
+access_token = os.environ["access_token"]
 
 # 配置通知方式 0=dingding 1=weixin 2=dd+wx一起通知
-notice_type = 2
+notice_type = 0
 
 # 配置查询域名前缀后缀
-domain_prefix = ''  # 前缀如：sabcsadfsafsf
-domain_suffix = ''  # 后缀如：xyz.cn
+domain_prefix = 'aa'  # 前缀如：sabcsadfsafsf
+domain_suffix = '.cn'  # 后缀如：xyz.cn
 
 # #####配置项结束#######
 

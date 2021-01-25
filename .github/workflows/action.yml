@@ -28,8 +28,15 @@ jobs:
       - name: '运行签到脚本'  
         run: python3 3floor_sign.py 
         env:
+            # 用户名:  
             username: ${{ secrets.username }}
+            # 明文密码或密码MD5:  
             password: ${{ secrets.password }}
-            dingding: ${{ secrets.dingding }}
+            # 问题答案，没有可不填:  
+            answer:   ${{ secrets.password }}
+            # Webhook加签秘钥:  
+            secret_key : ${{ secrets.secret_key  }}
+            # Webhook access_token
+            access_token  : ${{ secrets.access_token   }}
+            # Server酱申请的skey:  
             SCKEY:   ${{ secrets.SCKEY }}
-            notice_type : ${{ secrets.notice_type  }} 

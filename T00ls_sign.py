@@ -1,6 +1,4 @@
 # -*- coding:utf-8 -*-
-# coding by F1tz
-import os
 import requests
 import re
 import json
@@ -33,19 +31,19 @@ url_domain= 'https://www.t00ls.net/domain.html'
 # 6 您最喜欢的餐馆名称
 # 7 驾驶执照的最后四位数字
 
-username = os.environ["username"]  # 用户名
-password = os.environ["password"]  # 明文密码或密码MD5
+username = 'luckying'  # 用户名
+password = 'b4d781e496e2183de86435b63fbb62ca'  # 明文密码或密码MD5
 password_hash = True  # 密码为md5时设置为True
 questionid = '1'  # 问题ID，参考上面注释，没有可不填
-answer = os.environ["answer"]  # 问题答案，没有可不填
+answer = '张平'  # 问题答案，没有可不填
 
 # 配置各种key
 # Server酱申请的skey
-SCKEY = os.environ["SCKEY"]
+SCKEY = 'SCU107560Tc280fddca084c35812b55ce67fcc405a5f20e86cc4d84'
 # Webhook加签秘钥
-secret_key = os.environ["secret_key"]
+secret_key = 'SEC501d3603c85c3f90120f4dd606acb8bfc37053d288d7c827705f0083a2411326'
 # Webhook access_token
-access_token = os.environ["access_token"]
+access_token = '4978dbdd11859e0e4a036d517e8219e1ec4d06a3ad9aa968d10abe947d409e61'
 
 # 配置通知方式 0=dingding 1=weixin 2=dd+wx一起通知
 notice_type = 0
@@ -138,7 +136,7 @@ def signin_t00ls(session):
 # 域名查询
 def domain_query(session):
     retry = 0
-    while (retry<10): # 域名查询重试10次
+    while (retry<3): # 域名查询重试10次
         domain = domain_prefix + str(random.randint(100000, 999999)) + domain_suffix
         data = f'domain={domain}&formhash={formhash}&querydomainsubmit=%E6%9F%A5%E8%AF%A2'
         try:
@@ -238,7 +236,7 @@ def main():
     tubi_now = get_tubi(session) # 现Tubi数量
     print(time.strftime("%Y-%m-%d %H:%M:%S\n", time.localtime()), res_signin.text)
     data = '本次查询域名为：%s  \n原Tubi数量为：%s  \n现Tubi数量为：%s' % (domain, tubi_tmp, tubi_now)
-    if "success" in res_signin.text:
+    if "success" or "fail" in res_signin.text:
         send_msg(data)
 
 

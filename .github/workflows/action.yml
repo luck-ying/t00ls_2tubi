@@ -26,7 +26,7 @@ jobs:
         run: pip install -r ./requirements.txt 
         
       - name: '运行t00ls签到脚本'  
-        run: python3 T00ls_signin.py 
+        run: python3 T00ls_sign.py 
         env:
             # 用户名:  
             username: ${{ secrets.username }}

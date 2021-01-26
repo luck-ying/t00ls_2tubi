@@ -46,7 +46,7 @@ secret_key = 'SEC501d3603c85c3f90120f4dd606acb8bfc37053d288d7c827705f0083a241132
 access_token = '4978dbdd11859e0e4a036d517e8219e1ec4d06a3ad9aa968d10abe947d409e61'
 
 # 配置通知方式 0=dingding 1=weixin 2=dd+wx一起通知
-notice_type = 0
+notice_type = 1
 
 # 配置查询域名前缀后缀
 domain_prefix = 'aa'  # 前缀如：sabcsadfsafsf

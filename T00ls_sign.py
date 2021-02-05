@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import requests
 import re
+import os
 import json
 import time
 import hashlib
@@ -31,19 +32,19 @@ url_domain= 'https://www.t00ls.net/domain.html'
 # 6 您最喜欢的餐馆名称
 # 7 驾驶执照的最后四位数字
 
-username = 'luckying'  # 用户名
-password = 'b4d781e496e2183de86435b63fbb62ca'  # 明文密码或密码MD5
+username = os.environ["username"]  # 用户名
+password = os.environ["password"]  # 明文密码或密码MD5
 password_hash = True  # 密码为md5时设置为True
 questionid = '1'  # 问题ID，参考上面注释，没有可不填
-answer = '张平'  # 问题答案，没有可不填
+answer = os.environ["answer"]  # 问题答案，没有可不填
 
 # 配置各种key
 # Server酱申请的skey
-SCKEY = 'SCU107560Tc280fddca084c35812b55ce67fcc405a5f20e86cc4d84'
+SCKEY = os.environ["SCKEY"]
 # Webhook加签秘钥
-secret_key = 'SEC501d3603c85c3f90120f4dd606acb8bfc37053d288d7c827705f0083a2411326'
+secret_key = os.environ["secret_key"]
 # Webhook access_token
-access_token = '4978dbdd11859e0e4a036d517e8219e1ec4d06a3ad9aa968d10abe947d409e61'
+access_token = os.environ["access_token"]
 
 # 配置通知方式 0=dingding 1=weixin 2=dd+wx一起通知
 notice_type = 1

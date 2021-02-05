@@ -47,7 +47,7 @@ secret_key = os.environ["secret_key"]
 access_token = os.environ["access_token"]
 
 # 配置通知方式 0=dingding 1=weixin 2=dd+wx一起通知
-notice_type = 2
+notice_type = 1
 
 # 配置查询域名前缀后缀
 domain_prefix = 'aa'  # 前缀如：sabcsadfsafsf
@@ -237,8 +237,7 @@ def main():
     tubi_now = get_tubi(session) # 现Tubi数量
     print(time.strftime("%Y-%m-%d %H:%M:%S\n", time.localtime()), res_signin.text)
     data = '本次查询域名为：%s  \n原Tubi数量为：%s  \n现Tubi数量为：%s' % (domain, tubi_tmp, tubi_now)
-    if "success" or "fail" in res_signin.text:
-        send_msg(data)
+    send_msg(data)
 
 
 def main_handler(event, context):

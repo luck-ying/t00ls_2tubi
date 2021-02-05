@@ -33,7 +33,7 @@ jobs:
             # 明文密码或密码MD5:  
             password: ${{ secrets.password }}
             # 问题答案，没有可不填:  
-            answer:   ${{ secrets.password }}
+            answer:   ${{ secrets.answer }}
             # Webhook加签秘钥:  
             secret_key : ${{ secrets.secret_key  }}
             # Webhook access_token

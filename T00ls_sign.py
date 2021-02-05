@@ -47,7 +47,7 @@ secret_key = os.environ["secret_key"]
 access_token = os.environ["access_token"]
 
 # 配置通知方式 0=dingding 1=weixin 2=dd+wx一起通知
-notice_type = 0
+notice_type = 2
 
 # 配置查询域名前缀后缀
 domain_prefix = 'aa'  # 前缀如：sabcsadfsafsf

@@ -137,7 +137,7 @@ def signin_t00ls(session):
 # 域名查询
 def domain_query(session):
     retry = 0
-    while (retry<3): # 域名查询重试10次
+    while (retry<1): # 域名查询重试10次
         domain = domain_prefix + str(random.randint(100000, 999999)) + domain_suffix
         data = f'domain={domain}&formhash={formhash}&querydomainsubmit=%E6%9F%A5%E8%AF%A2'
         try:
@@ -203,7 +203,7 @@ def send_msg(data):
 def sendMsg_by_dd(data):
     datamsg = {"msgtype": "text",
                "text": {
-                   "content": f"T00ls签到通知！\n%s" % data
+                   "content": "T00ls签到通知！\n%s" % data
                }
                }
     send_url = 'https://oapi.dingtalk.com/robot/send'

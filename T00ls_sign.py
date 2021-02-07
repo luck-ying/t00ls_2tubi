@@ -203,7 +203,7 @@ def send_msg(data):
 def sendMsg_by_dd(data):
     datamsg = {"msgtype": "text",
                "text": {
-                   "content": "T00ls签到成功！\n%s" % data
+                   "content": f"T00ls签到通知！\n%s" % data
                }
                }
     send_url = 'https://oapi.dingtalk.com/robot/send'
